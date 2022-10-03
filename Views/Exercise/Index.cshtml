@@ -1,9 +1,90 @@
 ﻿@{
     ViewData["Title"] = "Esercizi";
+
+
+    //Esercizio 1
+    string name = "Gianni";
+    string surname = "Caringi";
+
+    //Esercizio 2
+    int number = 10;
+
+    int sumToNum(int n)
+    {
+        int sum = 0;
+        for (int i = 1; i <= n; i++)
+        {
+            sum += i;
+        }
+        return sum;
+    }
+
+    //Esercizio 3
+    string phrase = "Nel mezzo del cammin di nostra vita";
+    int counter = 0;
+    foreach (var c in phrase)
+    {
+        if (c == 'a')
+        {
+            counter++;
+        }
+    }
+
+    //Esercizio 4
+    List<int> randomNumbers = new List<int>();
+    for (int i = 0; i < 20; i++)
+    {
+        randomNumbers.Add(new Random().Next(1, 90));
+    }
+
+    //Esercizio 5
+    DateTime actualDate = DateTime.Now;
     
-    
+    //Esercizio 6
+    DateTime sevenDayAgo = actualDate.AddDays(-7);
 }
 
 <div>
-    <h1>Ciao</h1>
+    <div>
+        <h1>Esercizio 1</h1>
+        <h2>@name @surname</h2>
+    </div>
+    <br>
+    <div>
+        <h1>Esercizio 2</h1>
+        <p>Il risultato della somma dei numeri fino ad @number: @sumToNum(@number)</p>
+    </div>
+    <br>
+    <div>
+        <h1>Esercizio 3</h1>
+        <p>La lettera 'a' è presente: @counter</p>
+    </div>
+    <br>
+    <div>
+        <h3>Esercizio 4</h3>
+        <p>La lista dei numeri Random compresi tra 20 70</p>
+        <ul>
+            @foreach (var num in randomNumbers)
+            {
+                if (num >= 20 && num <= 70)
+                {
+                    <li>@num</li>
+                }
+            }
+        </ul>
+    </div>
+    <br>
+    <div>
+        <h1>Esercizio 5</h1>
+        <p>Oggi è: @actualDate.ToString("s")</p>
+    </div>
+    <br>
+    <div>
+        <h1>Esercizio 6</h1>
+        <p>Sette Giorni fa era: @sevenDayAgo.ToString("s")</p>
+        <p>Oggi è: @actualDate.DayOfWeek.ToString()</p>
+        <p>Fra un anno: @actualDate.AddMonths(12)</p>
+    </div>
+
+
 </div>
