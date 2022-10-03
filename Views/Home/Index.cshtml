@@ -1,8 +1,37 @@
 ﻿@{
     ViewData["Title"] = "Home Page";
+
+    Layout = null;
+
+    List<string[]> pizzas = new List<string[]>();
+
+    pizzas.Add(new string[] {"Margherita", "Pomodoro Mozzarella", "margherita.png", "4,00"});
+    pizzas.Add(new string[] {"Diavola", "Margherita + Salame", "diavola.png", "7,00"});
+    pizzas.Add(new string[] {"Provola", "Bianca con Provola", "provola.png", "6,00"});
+    pizzas.Add(new string[] {"Paperino", "Bianca con Patatine", "paperino.png", "9,00"});
+    pizzas.Add(new string[] {"Romanina", "Rossa aglio origano", "romanina.png", "6,00"});
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+<div>
+    <table>
+        <thead>
+        <tr>
+            <th>Nome</th>
+            <th>Descrizione</th>
+            <th>Foto</th>
+            <th>Prezzo</th>
+        </tr>
+        </thead>
+        <tbody>
+        @foreach (var pizza in pizzas)
+        {
+            <tr>
+                <td>@pizza[0]</td>
+                <td>@pizza[1]</td>
+                <td><img src="" alt="@pizza[2]" /></td>
+                <td>@pizza[3]</td>
+            </tr>
+        }
+        </tbody>
+    </table>
 </div>
