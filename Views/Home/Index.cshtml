@@ -1,8 +1,8 @@
 ﻿@{
-    ViewData["Title"] = "Home Page";
+    ViewData["Title"] = "La mia pizzeria";
 
     Layout = null;
-
+    
     List<string[]> pizzas = new List<string[]>();
 
     pizzas.Add(new string[] {"Margherita", "Pomodoro Mozzarella", "margherita.png", "4,00"});
@@ -29,7 +29,7 @@
                 <td>@pizza[0]</td>
                 <td>@pizza[1]</td>
                 <td><img src="" alt="@pizza[2]" /></td>
-                <td>@pizza[3]</td>
+                <td>@Convert.ToDecimal(pizza[3]) €</td>
             </tr>
         }
         </tbody>
